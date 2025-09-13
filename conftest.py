@@ -19,6 +19,7 @@ def browser(request):
         service = Service(executable_path="C:\\Users\hp\PycharmProjects\edgedriver_win64\msedgedriver.exe")
         driver = webdriver.Edge(service=service)
     driver.get("http://localhost:100")
+    request.node.driver = driver
     request.cls.driver = driver
     yield driver
     driver.quit()

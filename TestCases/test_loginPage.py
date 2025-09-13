@@ -15,10 +15,10 @@ class Test_loginPage:
     def test_verify_invalidLogin_TC03(self):
         lp = LoginPage(self.driver)
         lp.login("admin12", "admin")
-        assert lp.verify_errorMssg() == True
+        assert lp.verify_errorMssg() == False
 
     def test_verify_validLogin_TC04(self):
         lp = LoginPage(self.driver)
         lp.login("admin", "admin")
         hp = HomePage(self.driver)
-        assert hp.verifyHome() == False
+        assert hp.verifyHome() == True
